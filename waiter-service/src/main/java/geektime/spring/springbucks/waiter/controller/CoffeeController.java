@@ -62,10 +62,11 @@ public class CoffeeController {
                 String str;
                 while ((str = reader.readLine()) != null) {
                     String[] arr = StringUtils.split(str, " ");
-                    if (arr != null && arr.length == 2) {
+                    if (arr != null && arr.length == 2)
+                    {
                         coffees.add(coffeeService.saveCoffee(arr[0],
                                 Money.of(CurrencyUnit.of("CNY"),
-                                        NumberUtils.createBigDecimal(arr[1]))));
+                                        NumberUtils.createBigDecimal(arr[1]))));//通过字符串创建BigDecimal类型，支持long、int、float、double、number等数值
                     }
                 }
             } catch (IOException e) {

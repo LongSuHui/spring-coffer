@@ -37,7 +37,7 @@ public class CoffeeOrderController {
     }
 
     @GetMapping("/{id}")
-    public CoffeeOrder getOrder(@PathVariable("id") Long id) {//代码限流
+    public CoffeeOrder getOrder(@PathVariable("id") Long id) {//使用代码做限流
         CoffeeOrder order = null;
         try {
             order = rateLimiter.executeSupplier(() -> orderService.get(id));

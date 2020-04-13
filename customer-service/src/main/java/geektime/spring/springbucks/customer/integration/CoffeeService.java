@@ -12,7 +12,7 @@ import java.util.List;
 // name 是我们要去找的服务
 // path 公共的path部分
 // 因为 CoffeeService和CoffeeOrderService的name相同 为了区分 增加contextId 防止产生冲突
-// 不要在接口上加@RequestMapping
+// 不要在接口上加@RequestMapping 会起冲突
 public interface CoffeeService {
     @GetMapping(path = "/", params = "!name")
     List<Coffee> getAll();
